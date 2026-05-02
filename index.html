@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src https://api.gdeltproject.org; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+    <title>Cyber-Sentinel Intelligence Engine</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="icon">🛡️</span>
+                <h1>Cyber-Sentinel <span class="badge">v2.0.4</span></h1>
+            </div>
+            <p class="subtitle">Universal Deception Detection Engine</p>
+        </header>
+
+        <main>
+            <div class="input-section glass-panel">
+                <div class="input-header">
+                    <h2>Target Intercept Analysis</h2>
+                    <span class="status-indicator">● Live</span>
+                </div>
+                <textarea id="target-input" placeholder="Paste suspicious text, news snippet, URL, or email content here for analysis..."></textarea>
+                <div class="controls">
+                    <button id="scan-btn" class="primary-btn">
+                        <span class="btn-text">INITIALIZE SCAN</span>
+                        <span class="btn-icon">⚡</span>
+                    </button>
+                    <div class="demo-links">
+                        <span>Load Intercept:</span>
+                        <button class="demo-btn" data-demo="1">Phishing</button>
+                        <button class="demo-btn" data-demo="2">News</button>
+                        <button class="demo-btn" data-demo="3">Scam Job</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="scanning-overlay" class="hidden">
+                <div class="scanner-line"></div>
+                <p>Running Sanitization & MPCA Logic...</p>
+                <p class="sub-scan">Cross-referencing global nodes...</p>
+            </div>
+
+            <div id="results-panel" class="results-section glass-panel hidden">
+                <div class="result-header">
+                    <h2 id="primary-classification" class="classification">[RED FLAG] - ALERT: FAKE / SCAM</h2>
+                </div>
+                
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <span class="metric-label">Risk Level</span>
+                        <span id="risk-level" class="metric-value">Critical Phishing Risk</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-label">Category</span>
+                        <span id="category" class="metric-value">Financial Phishing</span>
+                    </div>
+                </div>
+
+                <div class="analysis-details">
+                    <div class="detail-group highlight-group">
+                        <h3><span class="icon">🔍</span> Explainability Highlight</h3>
+                        <ul id="explainability-list">
+                            <!-- populated by JS -->
+                        </ul>
+                    </div>
+
+                    <div class="detail-group">
+                        <h3><span class="icon">⚖️</span> Factual Justification</h3>
+                        <p id="factual-justification"></p>
+                    </div>
+
+                    <div class="detail-group advice-group">
+                        <h3><span class="icon">🛡️</span> Security Advice</h3>
+                        <p id="security-advice"></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
